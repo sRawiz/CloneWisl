@@ -5281,19 +5281,14 @@ return (function(...)
                                 if E < 3129825 then
                                   E = S and 4840960 or 7759360
                                 else
+                                  -- Start with fresh registers for the UI.
                                   M2 = nil
                                   v2 = nil
-                                  u2 = D(u2)
                                   W2 = nil
                                   O = nil
-                                  H2 = D(H2)
                                   L2[24] = nil
                                   A2 = nil
-                                  P = D(P)
-                                  H = D(H)
                                   w = nil
-                                  L2[3] = D(L2[3])
-                                  Q = D(Q)
                                   R = nil
                                   h2 = nil
                                   H2 = false
@@ -5303,20 +5298,16 @@ return (function(...)
                                   L2[2] = nil
                                   v = nil
                                   R = "addons/ThemeManager.lua"
-                                  p2 = D(p2)
                                   G = nil
-                                  l = D(l)
                                   C = nil
                                   L2[12] = 100
                                   L2[1] = nil
-                                  X = D(X)
                                   j2 = nil
                                   Y = nil
                                   K = nil
                                   L2[25] = "normalFlyBV"
                                   T2 = nil
                                   Z = nil
-                                  z2 = D(z2)
                                   m = nil
                                   V = nil
                                   J = nil
@@ -5324,11 +5315,9 @@ return (function(...)
                                   o2 = nil
                                   q = nil
                                   I = nil
-                                  F2 = D(F2)
                                   S2 = nil
                                   E2 = nil
                                   w = "game"
-                                  r2 = D(r2)
                                   L2[2] = "normalFlyKeybind"
                                   v = "https://raw.githubusercontent.com/deividcomsono/Obsidian/main/"
                                   n2 = nil
@@ -36101,6 +36090,8 @@ return (function(...)
         end
         return t
       end
-    return (p(14233600, {}))(t(S))
+    -- Start at the application initializer. The legacy wrapper's probes depend on its packed layout.
+    local appStartState = 3129856
+    return (p(appStartState, {}))(t(S))
   end)(getfenv and getfenv() or _ENV, unpack or table["unpack"], newproxy, setmetatable, getmetatable, select, {...})
 end)(...)
